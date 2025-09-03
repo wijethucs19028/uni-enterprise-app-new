@@ -1,0 +1,21 @@
+/* src/index.css (replace the Vite template) */
+html, body, #root { height: 100%; width: 100%; }
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #222;
+  background-color: #f6f7fb;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove the flex centering that caused the “half screen” effect */
+body { margin: 0; }
+
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button { font-family: inherit; }

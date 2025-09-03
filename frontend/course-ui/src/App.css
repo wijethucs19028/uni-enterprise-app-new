@@ -1,0 +1,51 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+html, body, #root { height: 100%; width: 100%; }
+body { margin: 0; background: #f6f7fb; color: #222; }
+
+.hstack { display: flex; gap: 8px; align-items: center; }
+.vstack { display: flex; gap: 8px; flex-direction: column; }
+
+.card {
+  background: #fff; border: 1px solid #e6e8ef; border-radius: 12px; padding: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+h1 { font-size: 28px; margin: 0 0 12px; }
+h2 { font-size: 20px; margin: 16px 0 8px; }
+
+/* legacy table helpers (AntD tables don’t need these, but harmless) */
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  background: #f2f4f8; text-align: left; font-weight: 600; padding: 10px;
+  border-bottom: 1px solid #e6e8ef;
+}
+tbody td { padding: 10px; border-bottom: 1px solid #eef0f5; }
+tbody tr:hover { background:#fafbff; }
+
+/* -------- NEW: Home dashboard tweaks -------- */
+.home-wrap {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f5f6fa;
+}
+
+.home-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px; /* tighter than before */
+}
+
+.stat-card .ant-statistic-title {
+  margin-bottom: 0;
+  color: rgba(0,0,0,0.55);
+  font-size: 12px;
+}
+
+.cal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}

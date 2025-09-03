@@ -1,0 +1,40 @@
+# spring:
+#   datasource:
+#     url: jdbc:postgresql://localhost:5433/coursedb   # <-- use 5433 (host port)
+#     username: course
+#     password: coursepw
+#     driver-class-name: org.postgresql.Driver
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     open-in-view: false
+#     properties:
+#       hibernate.format_sql: true
+
+
+
+spring:
+  datasource:
+    # Default: local dev (Docker Compose maps host 5433 → container 5432)
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5433/coursedb}
+    username: ${DATABASE_USERNAME:course}
+    password: ${DATABASE_PASSWORD:coursepw}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate.format_sql: true
+
+server:
+  # Use cloud platform PORT if provided, otherwise 8080
+  port: ${PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+

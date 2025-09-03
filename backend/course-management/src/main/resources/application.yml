@@ -1,0 +1,33 @@
+# spring:
+#   datasource:
+#     url: jdbc:h2:mem:demo;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+#     driver-class-name: org.h2.Driver
+#     username: sa
+#     password:
+#   jpa:
+#     hibernate:
+#       ddl-auto: update
+#     show-sql: true
+#   h2:
+#     console:
+#       enabled: true
+
+# server:
+#   port: 8080
+
+
+# Intentionally no datasource here.
+# Put DB settings only in profile files so the right driver is picked.
+
+server:
+  port: 8080
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update   # fine as a default; each profile can override if needed
+  # H2 console remains disabled by default
+  h2:
+    console:
+      enabled: false

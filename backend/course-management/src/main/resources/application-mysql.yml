@@ -1,0 +1,40 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3307/ucmsdb?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+    username: ucms
+    password: ucms123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    show-sql: false
+    properties:
+      hibernate.dialect: org.hibernate.dialect.MySQLDialect
+      hibernate.format_sql: false
+  h2:
+    console:
+      enabled: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.hibernate.SQL: warn
+    org.hibernate.orm.jdbc.bind: warn
+    org.springframework.security: info
+
+# You can keep this app block; it's harmless even if JWT isn't used
+app:
+  cors:
+    allowed-origins: "http://localhost:5173"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+  endpoint:
+    health:
+      show-details: "never"
